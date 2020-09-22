@@ -1,6 +1,12 @@
-package s2;
+package S2;
 
 import java.util.Comparator;
+
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.Out;
+import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdOut;
+
 
 /*************************************************************************
  * Compilation: javac Point.java Execution: Dependencies: StdDraw.java
@@ -37,6 +43,26 @@ public class Point implements Comparable<Point> {
     // slope between this point and that point
     public double slopeTo(Point that) {
         // TODO: Implement this
+        double posInf = Double.POSITIVE_INFINITY;
+        double negInf = Double.NEGATIVE_INFINITY;
+
+        float dx = that.x - this.x;
+        float dy = that.y - this.y;
+        if (dx == 0){
+            return 0;
+        }
+        if (dy != 0) {
+            return (dy/dx);
+        }
+        if (dx < 0 || dy < 0){
+            return -1;
+        }
+        if (dy >= 1.0 && dx == 0.0){
+            return posInf;
+        }
+        else if (dy >= -1.0 && dx == 0.0){
+            return negInf;
+        }
         return 0;
     }
 
@@ -46,7 +72,17 @@ public class Point implements Comparable<Point> {
      */
     public int compareTo(Point that) {
         // TODO: Implement this
-        return 0;
+        if(this.y < that.y){
+            if(this.x < that.x){
+                return 1;
+            }
+            else{
+                return -1;
+            }
+        }
+        else{
+            return -1;
+        }
     }
 
     // return string representation of this point
@@ -66,6 +102,7 @@ public class Point implements Comparable<Point> {
         for (int i = 0; i < n; i++) {
             int x = in.readInt(), y = in.readInt();
             points[i] = new Point(x, y);
+            StdOut.print(points[i]);
         }
         out.printf("Testing slopeTo method...\n");
         for (int i = 1; i < points.length; i++) {
