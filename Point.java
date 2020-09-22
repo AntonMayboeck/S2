@@ -46,24 +46,26 @@ public class Point implements Comparable<Point> {
         double posInf = Double.POSITIVE_INFINITY;
         double negInf = Double.NEGATIVE_INFINITY;
 
-        float dx = that.x - this.x;
-        float dy = that.y - this.y;
-        if (dx == 0){
+        int dx = that.x - this.x;
+        int dy = that.y - this.y;
+        if (dy == 0){
             return 0;
         }
-        if (dy != 0) {
+        if (dy > 0 || dx > 0) {
             return (dy/dx);
         }
-        if (dx < 0 || dy < 0){
+        else if (dx < 0 || dy < 0){
             return -1;
         }
-        if (dy >= 1.0 && dx == 0.0){
+        else if (dy >= 1.0 && dx == 0.0){
             return posInf;
         }
         else if (dy >= -1.0 && dx == 0.0){
             return negInf;
         }
-        return 0;
+        else{
+            return 0;
+        }
     }
 
     /**
