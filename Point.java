@@ -51,11 +51,8 @@ public class Point implements Comparable<Point> {
         if (dy == 0){
             return 0;
         }
-        if (dy > 0 || dx > 0) {
+        if (dy > 0 && dx > 0) {
             return (dy/dx);
-        }
-        else if (dx < 0 || dy < 0){
-            return -1;
         }
         else if (dy >= 1.0 && dx == 0.0){
             return posInf;
@@ -63,9 +60,13 @@ public class Point implements Comparable<Point> {
         else if (dy >= -1.0 && dx == 0.0){
             return negInf;
         }
+        else if (dx < 0 || dy < 0){
+            return -1;
+        }
         else{
             return 0;
         }
+
     }
 
     /**
@@ -77,6 +78,17 @@ public class Point implements Comparable<Point> {
         if(this.y < that.y){
             if(this.x < that.x){
                 return 1;
+            }
+            else{
+                return -1;
+            }
+        }
+        else if(this.y == that.y){
+            if(this.x < that.x){
+                return 1;
+            }
+            else if(this.x == that.x){
+                return 0;
             }
             else{
                 return -1;
@@ -97,6 +109,10 @@ public class Point implements Comparable<Point> {
         /*
          * Do not modify
          */
+        Point hello = new Point(-1,-2);
+        Point bla = new Point(-2,-2);
+        StdOut.println(hello.slopeTo(bla));
+        StdOut.println(hello.compareTo(bla));
         In in = new In();
         Out out = new Out();
         int n = in.readInt();
