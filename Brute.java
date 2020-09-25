@@ -58,7 +58,7 @@ public class Brute {
             y = file.readInt();
             point = new Point(x, y);
             point.draw();
-            pointArray[i] = p;
+            pointArray[i] = point;
         }
         Point points = new Point(x,y); //we always be the last read int
         if (N >= 4) {
