@@ -54,17 +54,17 @@ public class Point implements Comparable<Point> {
         if (dy > 0 && dx > 0) {
             return (dy/dx);
         }
-        else if (dy >= 1.0 && dx == 0.0){
+        else if (dy == 1 && dx == 0){
             return posInf;
         }
-        else if (dy >= -1.0 && dx == 0.0){
+        else if (dy == -1 && dx == 0){
             return negInf;
         }
         else if (dx < 0 || dy < 0){
             return -1;
         }
         else{
-            return 0;
+            return 1;
         }
 
     }
