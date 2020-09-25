@@ -46,12 +46,15 @@ public class Point implements Comparable<Point> {
         double posInf = Double.POSITIVE_INFINITY;
         double negInf = Double.NEGATIVE_INFINITY;
 
-        int dx = that.x - this.x;
-        int dy = that.y - this.y;
+        double dx = that.x - this.x;
+        double dy = that.y - this.y;
         if (dy == 0){
             return 0;
         }
-        if (dy > 0 && dx > 0) {
+        else if(dx == 0){
+            return 0;
+        }
+        if ((dy > 0 || dx > 0) || (dy < 0 || dx < 0)) {
             return (dy/dx);
         }
         else if (dy == 1 && dx == 0){
@@ -59,9 +62,6 @@ public class Point implements Comparable<Point> {
         }
         else if (dy == -1 && dx == 0){
             return negInf;
-        }
-        else if (dx < 0 || dy < 0){
-            return -1;
         }
         else{
             return 1;
@@ -76,21 +76,21 @@ public class Point implements Comparable<Point> {
     public int compareTo(Point that) {
         // TODO: Implement this
         if(this.y < that.y){
-            if(this.x < that.x){
+            return 1;
+/*            if(this.x < that.x){
                 return 1;
             }
             else{
                 return -1;
-            }
+            }*/
         }
         else if(this.y == that.y){
             if(this.x < that.x){
                 return 1;
-            }
-            else if(this.x == that.x){
+            } else if (this.x == that.x) {
                 return 0;
             }
-            else{
+            else {
                 return -1;
             }
         }

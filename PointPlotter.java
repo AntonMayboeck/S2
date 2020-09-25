@@ -25,8 +25,8 @@ public class PointPlotter {
         //StdDraw.show(0);
 
         // read in the input
-        String filename = args[0];
-        In in = new In(filename);
+
+        In in = new In();
         int N = in.readInt();
         for (int i = 0; i < N; i++) {
             int x = in.readInt();

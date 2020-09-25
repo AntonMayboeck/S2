@@ -10,7 +10,9 @@ public class Brute {
 
     public static void  printCollinear(Point p, Point s, Point r, Point q){
         p.drawTo(q);
-        StdOut.printf("%s -> %s -> %s -> %s\n", p.toString(), s.toString(), r.toString(), q.toString());
+        StdOut.printf("%s -> %s -> %s -> %s\n", p.toString(), s.toString(),
+                r.toString(), q.toString());
+
     }
 
     public static boolean isCollinear(Point p, Point s, Point r, Point q){
@@ -18,13 +20,17 @@ public class Brute {
                 && p.slopeTo(r) == s.slopeTo(q);
     }
 
-    public static void checkCollinear(Point[] point, int N){
+    public static void checkCollinear(Point[] point, int N, Point points){
+        Point[] hello = new Point[4];
         for(int i = 0; i < N - 3; i++){
             for(int j = i + 1; j < N - 2; j++){
                 for(int k = j + 1; k < N - 1; k++){
                     for(int l = k + 1; l < N; l++){
                         if(Brute.isCollinear(point[i], point[j], point[k], point[l])){
-                            Brute.printCollinear(point[i], point[j], point[k], point[l]);
+                            if(points.compareTo(point[j]) == 1);{ //find a way to sort the points suing compareTo
+
+                            }                                     //using maybe an array
+                                Brute.printCollinear(point[i], point[j], point[k], point[l]);
                         }
                     }
                 }
@@ -33,7 +39,9 @@ public class Brute {
     }
 
     public static void main(String[] args){
-        int x, y, N;
+        int x = 0;
+        int y = 0;
+        int N = 0;
         String filename;
         Point point;
 
@@ -50,11 +58,12 @@ public class Brute {
             y = file.readInt();
             point = new Point(x, y);
             point.draw();
-            pointArray[i] = point;
+            pointArray[i] = p;
         }
+        Point points = new Point(x,y); //we always be the last read int
         if (N >= 4) {
             Arrays.sort(pointArray);
-            Brute.checkCollinear(pointArray, N);
+            Brute.checkCollinear(pointArray, N, points);
         }
         StdDraw.show(0);
     }
