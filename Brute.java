@@ -57,11 +57,8 @@ public class Brute {
             for(int j = i + 1; j < N - 2; j++){
                 for(int k = j + 1; k < N - 1; k++){
                     for(int l = k + 1; l < N; l++){
-                        if(Brute.isCollinear(pointArray[i], pointArray[j], pointArray[k], pointArray[l])){
-                            /*if(points.compareTo(point[j]) == 1);{ //find a way to sort the points suing compareTo
-
-                            }   */                                  //using maybe an array
-                                Brute.printCollinear(pointArray[i], pointArray[j], pointArray[k], pointArray[l]);
+                        if(isCollinear(pointArray[i], pointArray[j], pointArray[k], pointArray[l])){
+                            printCollinear(pointArray[i], pointArray[j], pointArray[k], pointArray[l]);
                         }
                     }
                 }
@@ -77,3 +74,4 @@ public class Brute {
 
 
 }
+

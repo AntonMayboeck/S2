@@ -9,31 +9,21 @@ import java.util.Arrays;
 public class Fast {
 
     public static void  printCollinear(Point[] pointArray, int limitLow, int limitHigh){
-        // Invariant: min will always be at points[0]
-        // Invariant: max will always be at points[hi-1]
-        
-        StdOut.printf("%s -> ", pointArray[0].toString());
+        int limitMid = limitHigh - limitLow;
         Arrays.sort(pointArray, limitLow, limitHigh);
-        for (int k = 0; k < limitHigh-limitLow; k++) {
-            StdOut.printf("%s", pointArray[limitLow+k].toString());
-            if (k != limitHigh-limitLow-1)
-                StdOut.printf(" -> ");
-            else
-                StdOut.printf("\n");
-        }
-        pointArray[0].drawTo(pointArray[limitHigh-1]);
-    }
 
-    public static boolean isCollinear(Point p, Point s, Point r, Point q){
-        if(p.slopeTo(s) == p.slopeTo(r)){
-            if(p.slopeTo(s) == p.slopeTo(q)){
-                return true;
+        StdOut.printf("%s -> ", pointArray[0].toString());
+        for (int i = 0; i < limitMid; i++) {
+            StdOut.printf("%s", pointArray[limitLow + i].toString());
+
+            if (i != limitMid - 1) {
+                StdOut.printf(" -> ");
+            }
+            else {
+                StdOut.printf("\n");
             }
         }
-        else{
-            return false;
-        }
-        return false;
+        //pointArray[0].drawTo(pointArray[limitHigh-1]);
     }
 
     public static void checkCollinear(){
@@ -43,8 +33,8 @@ public class Fast {
         Point point;
 
         // rescale coordinates and turn on animation mode
-        StdDraw.setXscale(0, 32768);
-        StdDraw.setYscale(0, 32768);
+        //StdDraw.setXscale(0, 32768);
+        //StdDraw.setYscale(0, 32768);
 
         In file = new In();
         N = file.readInt();
@@ -54,7 +44,7 @@ public class Fast {
             x = file.readInt();
             y = file.readInt();
             point = new Point(x, y);
-            point.draw();
+            //point.draw();
             pointArray[i] = point;
         }
         Point[] pointArrayCopy = pointArray.clone();
@@ -75,13 +65,20 @@ public class Fast {
                 }
                 else {
                     if (limitHigh - limitLow >= 3){
-                        if (originPoint.slopeTo(pointArray[limitLow]) == - 1){
+                        if (originPoint.compareTo(pointArray[limitLow]) == -1){
                             printCollinear(pointArray, limitLow, limitHigh);
-                            limitLow = limitHigh;
                         }
                     }
+                    limitLow = limitHigh;
                 }
                 limitHigh ++;
+            }
+            if (pointArray[N-1].slopeTo(originPoint) == pointArray[limitLow].slopeTo(originPoint)) {
+                if (limitHigh - limitLow >= 3){
+                    if (originPoint.compareTo(pointArray[limitLow]) == -1){
+                        printCollinear(pointArray, limitLow, limitHigh);
+                    }
+                }
             }
         }
     }
