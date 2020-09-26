@@ -5,7 +5,6 @@ import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 public class Brute {
 
@@ -81,7 +80,7 @@ public class Brute {
         }
         Point points = new Point(x,y); //we always be the last read int
         if (N >= 4) {
-            Arrays.sort(pointArray, Collections.reverseOrder());
+            Arrays.sort(pointArray);
             Brute.checkCollinear(pointArray, N);
         }
         StdDraw.show(0);
