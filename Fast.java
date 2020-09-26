@@ -3,6 +3,7 @@ package S2;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.Stopwatch;
 
 import java.util.Arrays;
 
@@ -57,5 +58,9 @@ public class Fast {
         }
         StdDraw.show(0);*/
     }
-
+    public static void main(String[] args){
+        Stopwatch stopwatch = new Stopwatch();
+        checkCollinear();
+        StdOut.println(stopwatch.elapsedTime());
+    }
 }
