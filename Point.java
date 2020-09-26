@@ -5,8 +5,6 @@ import java.util.Comparator;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Out;
 import edu.princeton.cs.algs4.StdDraw;
-import edu.princeton.cs.algs4.StdOut;
-
 
 /*************************************************************************
  * Compilation: javac Point.java Execution: Dependencies: StdDraw.java
@@ -20,7 +18,21 @@ public class Point implements Comparable<Point> {
     public final int x, y;
 
     // compare points by slope
-    public final Comparator<Point> SLOPE_ORDER = null;
+    public final Comparator<Point> SLOPE_ORDER = new slopeOrder();
+
+    private class slopeOrder implements Comparator<Point> {
+        public int compare(Point a, Point b) {
+            if (slopeTo(a) < slopeTo(b)) {
+                return -1;
+            }
+            else if (slopeTo(a) > slopeTo(b)) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+    }
 
     // create the point (x, y)
     public Point(int x, int y) {
@@ -42,7 +54,6 @@ public class Point implements Comparable<Point> {
 
     // slope between this point and that point
     public double slopeTo(Point that) {
-        // TODO: Implement this
         double posInf = Double.POSITIVE_INFINITY;
         double negInf = Double.NEGATIVE_INFINITY;
 
@@ -69,28 +80,21 @@ public class Point implements Comparable<Point> {
      * y-coordinates and breaking ties by x-coordinates
      */
     public int compareTo(Point that) {
-        // TODO: Implement this
         if(this.y < that.y){
-            return 1;
-/*            if(this.x < that.x){
-                return 1;
-            }
-            else{
-                return -1;
-            }*/
+            return -1;
         }
         else if(this.y == that.y){
             if(this.x < that.x){
-                return 1;
+                return -1;
             } else if (this.x == that.x) {
                 return 0;
             }
             else {
-                return -1;
+                return 1;
             }
         }
         else{
-            return -1;
+            return 1;
         }
     }
 
@@ -104,10 +108,6 @@ public class Point implements Comparable<Point> {
         /*
          * Do not modify
          */
-        Point hello = new Point(-1,-2);
-        Point bla = new Point(-2,-2);
-        StdOut.println(hello.slopeTo(bla));
-        StdOut.println(hello.compareTo(bla));
         In in = new In();
         Out out = new Out();
         int n = in.readInt();
@@ -115,7 +115,6 @@ public class Point implements Comparable<Point> {
         for (int i = 0; i < n; i++) {
             int x = in.readInt(), y = in.readInt();
             points[i] = new Point(x, y);
-            StdOut.print(points[i]);
         }
         out.printf("Testing slopeTo method...\n");
         for (int i = 1; i < points.length; i++) {
