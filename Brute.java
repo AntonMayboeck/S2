@@ -1,7 +1,9 @@
 package S2;
 
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.Stopwatch;
 
 import java.util.Arrays;
 
@@ -32,7 +34,10 @@ public class Brute {
         int N;
         Point point;
 
-
+/*
+        StdDraw.setXscale(0, 32768);
+        StdDraw.setYscale(0, 32768);
+*/
 
         In file = new In();
         N = file.readInt();
@@ -42,6 +47,9 @@ public class Brute {
             x = file.readInt();
             y = file.readInt();
             point = new Point(x, y);
+/*
+            point.draw();
+*/
             pointArray[i] = point;
         }
         Arrays.sort(pointArray);
@@ -62,7 +70,9 @@ public class Brute {
     }
 
     public static void main(String[] args){
+        Stopwatch stopwatch = new Stopwatch();
         checkCollinear();
+        StdOut.println(stopwatch.elapsedTime());
     }
 
 
