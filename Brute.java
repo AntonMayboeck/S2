@@ -69,14 +69,9 @@ public class Brute {
         for (int i = 0; i < N; i++) {
             x = file.readInt();
             y = file.readInt();
-            oldX = x;
-            oldY = y;
             point = new Point(x, y);
-            thatPoint = new Point(oldX, oldY);
             point.draw();
             pointArray[i] = point;
-            int val = point.compareTo(thatPoint);
-            pointCheck[i] = val;
         }
         Point points = new Point(x,y); //we always be the last read int
         if (N >= 4) {
