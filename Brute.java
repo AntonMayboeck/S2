@@ -15,7 +15,7 @@ public class Brute {
 
     }
 
-    
+
     public static boolean isCollinear(Point p, Point s, Point r, Point q){
         if(p.slopeTo(s) == p.slopeTo(r)){
             if(p.slopeTo(s) == p.slopeTo(q)){
