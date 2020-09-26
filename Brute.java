@@ -12,7 +12,6 @@ public class Brute {
     public static void  printCollinear(Point p, Point s, Point r, Point q){
         StdOut.printf("%s -> %s -> %s -> %s\n", p.toString(), s.toString(),
                 r.toString(), q.toString());
-
     }
 
     public static boolean isCollinear(Point p, Point s, Point r, Point q){
@@ -20,7 +19,6 @@ public class Brute {
             if(p.slopeTo(s) == p.slopeTo(q)){
                 return true;
             }
-
         }
         else{
             return false;
