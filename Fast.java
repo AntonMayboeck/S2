@@ -2,15 +2,30 @@ package S2;
 
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
+import edu.princeton.cs.algs4.StdOut;
 
 import java.util.Arrays;
 
 public class Fast {
     public static void  printCollinear(Point p, Point s, Point r, Point q){
+        StdOut.printf("%s -> %s -> %s -> %s\n", p.toString(), s.toString(),
+                r.toString(), q.toString());
 
     }
 
-    public static void checkCollinear(Point[] point, int N){
+    public static boolean isCollinear(Point p, Point s, Point r, Point q){
+        if(p.slopeTo(s) == p.slopeTo(r)){
+            if(p.slopeTo(s) == p.slopeTo(q)){
+                return true;
+            }
+        }
+        else{
+            return false;
+        }
+        return false;
+    }
+
+    public static void checkCollinear(){
 /*
     }
 
