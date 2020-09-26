@@ -3,14 +3,8 @@ package S2;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
-
-import edu.princeton.cs.algs4.Merge;
-
-
-
+import edu.princeton.cs.algs4.Stopwatch;
 import java.util.Arrays;
-
-import static edu.princeton.cs.algs4.Merge.*;
 
 public class Fast {
     int lo = 0;
@@ -19,12 +13,6 @@ public class Fast {
         StdOut.printf("%s -> %s -> %s -> %s\n", p.toString(), s.toString(),
                 r.toString(), q.toString());
 
-    }
-
-    public double[] sortSlope(Point[] points){
-        double[] ble;
-        ble = Mergesort(points);
-        return ble;
     }
 
     public static boolean isCollinear(Point p, Point s, Point r, Point q){
