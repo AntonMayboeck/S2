@@ -2,17 +2,17 @@
  *  Pattern Recognition readme.txt template
  **********************************************************************/
 
-Name: Anton Mayböck Helgason          
+Name: Anton Maybï¿½ck Helgason          
 Login: antonm19           
-Hópur: S2 53
+Hï¿½pur: S2 53
 
 Partner name: Eva Naabye 
 Partner login: evan19  
-Partner hópur: S2 53
+Partner hï¿½pur: S2 53
 
-Partner name: Björgvin Elisson    
+Partner name: Bjï¿½rgvin Elisson    
 Partner login: bjorgvine19 
-Partner hópur: S2 53
+Partner hï¿½pur: S2 53
 
 Username of the student submitting to Mooshak: bjorgvine19
 Submission on Mooshak
@@ -119,7 +119,7 @@ When checking if the points are collinear we had that if the point where able to
  *
 *********************************************************************/
 Anton - Point.java, Brute.java
-Björgvin - Point.java, Brute.java and Fast.java
+Bjï¿½rgvin - Point.java, Brute.java and Fast.java
 Eva - Fast.java, Point.java
 
 
@@ -127,12 +127,6 @@ Eva - Fast.java, Point.java
 				FAST.java
 **********************************************************************/
 
-
-/**********************************************************************
- *  List any other comments here. Feel free to provide any feedback   
- *  on how much you learned from doing the assignment, and whether    
- *  you enjoyed doing it.                                             
- **********************************************************************/
 
 /**********************************************************************
  *  Step 1.  Explain *briefly* how you implemented brute force.
@@ -147,8 +141,7 @@ Eva - Fast.java, Point.java
  *           What steps did you do to avoid printing permutations
  *           and subsegments?
  **********************************************************************/
-
-
+We used array sort for the brute force solution
 
 
 /**********************************************************************
@@ -165,18 +158,18 @@ Eva - Fast.java, Point.java
     
       N       Fast(s)      sorting
  ---------------------------------
-    8		~0.4	     O(1)
-    9		~0.1	     O(1)
-    10		~0.4	     O(1)
-    20		~0.1	     O(1)
-    40		~0.1	     O(1)
-    48		~0.1	     O(1)
-    400		~6.5	     O(1)
+    8		~	     O(1)
+    9		~	     O(1)
+    10		~	     O(1)
+    20		~	     O(1)
+    40		~	     O(1)
+    48		~	     O(1)
+    400		~	     O(1)
    1423		180	     O(1)
   
 
 
-Fast:    ~N^4
+Fast:    ~O(N^2(log(N))
 
 Sorting:  -
 
@@ -207,20 +200,20 @@ Sorting: -
  *  include any help from people (including course staff, lab TAs,
  *  classmates, and friends) and attribute them by name.
  **********************************************************************/
-
+One of our brothers helped greatly in the implementation of the algorithm.
 
 
 /**********************************************************************
  *  Describe any serious problems you encountered.                    
  **********************************************************************/
-
+At first we couldn't get the program to read from the test input folder
 
 /**********************************************************************
  *  If you worked with a partner, assert below that you followed
  *  the protocol as described on the assignment page. Give one
  *  sentence explaining what each of you contributed.
  **********************************************************************/
-
+See in brute force part of the report
 
 
 
@@ -229,3 +222,5 @@ Sorting: -
  *  on how much you learned from doing the assignment, and whether    
  *  you enjoyed doing it.                                             
  **********************************************************************/
+This third part of the project was especially challenging however all in all
+this project deepened our understanding on the subject quite a lot.
