@@ -15,9 +15,12 @@ Partner login: bjorgvine19
 Partner hópur: S2 53
 
 Username of the student submitting to Mooshak: bjorgvine19
+Submission on Mooshak
+Brute.java: 1228
+Point.java: 1269
 
 Hours to complete assignment (optional):
-
+20 hours
 
 
 /**********************************************************************
@@ -90,7 +93,8 @@ Sorting:
  *  are 5 or more points on a line segment, indicate that here.
  **********************************************************************/
 
-
+When N is a large number the time it will take too much for a normal person.
+Prints out the same line segment
 
 /**********************************************************************
  *  Describe whatever help (if any) that you received.
@@ -99,25 +103,29 @@ Sorting:
  *  classmates, and friends) and attribute them by name.
  **********************************************************************/
 
-
+Group S2 11 helped us with some implementaion of Brute.java
 
 /**********************************************************************
  *  Describe any serious problems you encountered.                    
  **********************************************************************/
 
-
-
+When trying to submit the Brute.java to Mooshak it gave us an error that we had a deprecated API because in the code we still used StdDraw.draw.
+When checking if the points are collinear we had that if the point where able to go over the first if function and then it would always return true. 
 
 /**********************************************************************
  *  If you worked with a partner, assert below that you followed
  *  the protocol as described on the assignment page. Give one
  *  sentence explaining what each of you contributed.
- **********************************************************************/
+ *
+*********************************************************************/
+Anton - Point.java, Brute.java
+Björgvin - Point.java, Brute.java and Fast.java
+Eva - Fast.java, Point.java
 
 
-
-FAST.java
-
+/**********************************************************************
+				FAST.java
+**********************************************************************/
 
 
 /**********************************************************************
@@ -125,6 +133,7 @@ FAST.java
  *  on how much you learned from doing the assignment, and whether    
  *  you enjoyed doing it.                                             
  **********************************************************************/
+
 /**********************************************************************
  *  Step 1.  Explain *briefly* how you implemented brute force.
  *           Describe how you implemented compareTo() and the
@@ -192,8 +201,6 @@ Sorting: -
  *  are 5 or more points on a line segment, indicate that here.
  **********************************************************************/
 
-
-
 /**********************************************************************
  *  Describe whatever help (if any) that you received.
  *  Don't include readings, lectures, and precepts, but do
@@ -208,16 +215,11 @@ Sorting: -
  **********************************************************************/
 
 
-
-
 /**********************************************************************
  *  If you worked with a partner, assert below that you followed
  *  the protocol as described on the assignment page. Give one
  *  sentence explaining what each of you contributed.
  **********************************************************************/
-
-
-
 
 
 
