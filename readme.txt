@@ -39,7 +39,7 @@ and if it returns true it prints it out.
  *           What steps did you do to avoid printing permutations
  *           and subsegments?
  **********************************************************************/
-
+We used array sort for the brute force solution
 
 
 
@@ -70,7 +70,7 @@ and if it returns true it prints it out.
 
 Brute:    ~N^4
 
-Sorting:  -
+Sorting:  -O(1)
 
 
 
@@ -141,7 +141,6 @@ Eva - Fast.java, Point.java
  *           What steps did you do to avoid printing permutations
  *           and subsegments?
  **********************************************************************/
-We used array sort for the brute force solution
 
 
 /**********************************************************************
