@@ -7,12 +7,21 @@ import edu.princeton.cs.algs4.Stopwatch;
 import java.util.Arrays;
 
 public class Fast {
-    int lo = 0;
-    int hi = 0;
-    public static void  printCollinear(Point[] pointArray, int limitLow, int limitHigh){
-        //StdOut.printf("%s -> %s -> %s -> %s\n", p.toString(), s.toString(),
-              //  r.toString(), q.toString());
 
+    public static void  printCollinear(Point[] pointArray, int limitLow, int limitHigh){
+        // Invariant: min will always be at points[0]
+        // Invariant: max will always be at points[hi-1]
+        
+        StdOut.printf("%s -> ", pointArray[0].toString());
+        Arrays.sort(pointArray, limitLow, limitHigh);
+        for (int k = 0; k < limitHigh-limitLow; k++) {
+            StdOut.printf("%s", pointArray[limitLow+k].toString());
+            if (k != limitHigh-limitLow-1)
+                StdOut.printf(" -> ");
+            else
+                StdOut.printf("\n");
+        }
+        pointArray[0].drawTo(pointArray[limitHigh-1]);
     }
 
     public static boolean isCollinear(Point p, Point s, Point r, Point q){
@@ -75,7 +84,6 @@ public class Fast {
                 limitHigh ++;
             }
         }
-        StdDraw.show(0);
     }
 
 
