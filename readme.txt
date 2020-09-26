@@ -64,7 +64,7 @@ We used array sort for the brute force solution
     40		~0.1	     O(1)
     48		~0.1	     O(1)
     400		~6.5	     O(1)
-   1423		180	     O(1)
+   1423		~180	     O(1)
   
 
 
@@ -157,20 +157,20 @@ Eva - Fast.java, Point.java
     
       N       Fast(s)      sorting
  ---------------------------------
-    8		~	     O(1)
-    9		~	     O(1)
-    10		~	     O(1)
-    20		~	     O(1)
-    40		~	     O(1)
-    48		~	     O(1)
-    400		~	     O(1)
-   1423		180	     O(1)
+    8		~0.5	     N(log(N))
+    9		~0.1	     N(log(N))
+    10		~0.1	     N(log(N))
+    20		~0.1	     N(log(N))
+    40		~0.1	     N(log(N))
+    48		~0.1	     N(log(N))
+    400		~0.3	     N(log(N))
+   1423		~1.4	     N(log(N))
   
 
 
 Fast:    ~O(N^2(log(N))
 
-Sorting:  -
+Sorting:  -N(log(N))
 
 
 
