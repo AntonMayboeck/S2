@@ -48,18 +48,18 @@ public class Point implements Comparable<Point> {
 
         double dx = that.x - this.x;
         double dy = that.y - this.y;
-        double slope = dy/dx;
-        if (dy == 0){
+        if (dy == 0 && dx != 0){
             return 0;
         }
-        else if(dx == 0){
+        else if(dx == 0 && dy != 0){
             return posInf;
         }
         else if (dy == 0 && dx == 0){
             return negInf;
         }
         else{
-            return 1;
+            double slope = dy/dx;
+            return slope;
         }
 
     }
