@@ -7,11 +7,11 @@ import java.util.Arrays;
 
 public class Fast {
     public static void  printCollinear(Point p, Point s, Point r, Point q){
-        
+
     }
 
     public static void checkCollinear(Point[] point, int N){
-
+/*
     }
 
         public static void main(String[] args){
@@ -40,7 +40,7 @@ public class Fast {
             Arrays.sort(pointArray);
             Brute.checkCollinear(pointArray, N);
         }
-        StdDraw.show(0);
+        StdDraw.show(0);*/
     }
 
 }
