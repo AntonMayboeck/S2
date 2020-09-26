@@ -16,20 +16,28 @@ public class Brute {
     }
 
     public static boolean isCollinear(Point p, Point s, Point r, Point q){
-        return p.slopeTo(s) == s.slopeTo(r) && r.slopeTo(q) == p.slopeTo(q)
-                && p.slopeTo(r) == s.slopeTo(q);
+        if(p.slopeTo(s) == p.slopeTo(r)){
+            if(p.slopeTo(s) == p.slopeTo(q)){
+                return true;
+            }
+
+        }
+        else{
+            return false;
+        }
+        return true;
     }
 
-    public static void checkCollinear(Point[] point, int N, Point points){
+    public static void checkCollinear(Point[] point, int N){
         Point[] hello = new Point[4];
         for(int i = 0; i < N - 3; i++){
             for(int j = i + 1; j < N - 2; j++){
                 for(int k = j + 1; k < N - 1; k++){
                     for(int l = k + 1; l < N; l++){
                         if(Brute.isCollinear(point[i], point[j], point[k], point[l])){
-                            if(points.compareTo(point[j]) == 1);{ //find a way to sort the points suing compareTo
+                            /*if(points.compareTo(point[j]) == 1);{ //find a way to sort the points suing compareTo
 
-                            }                                     //using maybe an array
+                            }   */                                  //using maybe an array
                                 Brute.printCollinear(point[i], point[j], point[k], point[l]);
                         }
                     }
@@ -41,9 +49,12 @@ public class Brute {
     public static void main(String[] args){
         int x = 0;
         int y = 0;
+        int oldX = 0;
+        int oldY = 0;
         int N = 0;
         String filename;
         Point point;
+        Point thatPoint;
 
         // rescale coordinates and turn on animation mode
         StdDraw.setXscale(0, 32768);
@@ -53,17 +64,24 @@ public class Brute {
         In file = new In();
         N = file.readInt();
         Point[] pointArray = new Point[N];
+        int[] pointCheck = new int[N];
+
         for (int i = 0; i < N; i++) {
             x = file.readInt();
             y = file.readInt();
+            oldX = x;
+            oldY = y;
             point = new Point(x, y);
+            thatPoint = new Point(oldX, oldY);
             point.draw();
             pointArray[i] = point;
+            int val = point.compareTo(thatPoint);
+            pointCheck[i] = val;
         }
         Point points = new Point(x,y); //we always be the last read int
         if (N >= 4) {
             Arrays.sort(pointArray);
-            Brute.checkCollinear(pointArray, N, points);
+            Brute.checkCollinear(pointArray, N);
         }
         StdDraw.show(0);
     }
